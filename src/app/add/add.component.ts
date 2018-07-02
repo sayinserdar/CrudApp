@@ -11,5 +11,8 @@ export class AddComponent implements OnInit {
 
   ngOnInit() {
   }
+  onAddSelected() {
+    alert('Added');
+  }
 
 }

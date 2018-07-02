@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<nav class="navbar is-danger">
+  <div class="navbar-brand">
+    <div class="navbar-item">
+      CrudApp
+    </div>
+  </div>
+
+  <div  class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" href="https://bulma.io/">
+        List
+      </a>
+      <a class="navbar-item" href="https://bulma.io/">
+        Add
+      </a>
+    </div>
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+  <app-list></app-list>
+</div>
+
