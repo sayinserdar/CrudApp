@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
+import {FirebaseService} from '../firebase.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -8,13 +9,13 @@ import { Observable } from 'rxjs';
 })
 export class ListComponent implements OnInit {
 
-  items: Observable<any[]>;
-  constructor(db: AngularFireDatabase) {
-    this.items = db.list('items').valueChanges();
+  students: Observable<any[]>;
+  constructor(private fire: FirebaseService) {
   }
-
 
   ngOnInit() {
   }
-
+  getList() {
+    this.students = this.fire.getList('Students');
+  }
 }

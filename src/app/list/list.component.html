@@ -1,5 +1,12 @@
 <div class="container">
-  <div *ngFor="let student of students">
-    <h1>{{student}}</h1>
+  <app-student></app-student>
+  <a (click)="getList()" class="is-warning">Get Students List</a>
+  <div *ngFor="let student of students | async">
+    <div class="container">
+      <div class="box"> ClassName: {{student.className}} StudentName: {{student.studentName}} CustodianName: {{student.studentName}}
+        <a class="button is-warning">Delete</a>
+        <a class="button is-primary">Update</a>
+      </div>
+    </div>
   </div>
 </div>

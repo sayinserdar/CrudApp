@@ -13,4 +13,7 @@ export class AppComponent {
     items: Observable<any[]>;
   constructor(private db: AngularFireDatabase, private fb: FirebaseService) {
   }
+  deleteAll() {
+    this.fb.deleteAll();
+  }
 }

@@ -9,22 +9,22 @@ import { map } from 'rxjs/operators';
 })
 export class FirebaseService {
   itemsRef: AngularFireList<any>;
-  items: Observable<any[]>;
   constructor(private db: AngularFireDatabase) {
-    this.itemsRef = db.list('items');
-    // Use snapshotChanges().map() to store the key
-    this.items = this.itemsRef.snapshotChanges().pipe(
-      map(changes =>
-        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-      )
-    );
+    this.itemsRef = db.list('Students');
   }
-  getList() {
-    return this.db.list('items').snapshotChanges();
+  getList(ref: string) {
+    return this.db.list(ref).valueChanges();
   }
   addStudent(student: StudentModel) {
     this.itemsRef.push(student);
-
+  }
+  deleteStudent(studentName: string) {
+    this.itemsRef.remove(studentName);
+  }
+  updateStudent(studentName: string) {
+  }
+  deleteAll() {
+    this.itemsRef.remove();
   }
 }
 
