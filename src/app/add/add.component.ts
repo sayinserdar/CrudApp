@@ -23,9 +23,6 @@ export class AddComponent implements OnInit {
     this.newStudent.className = this.classNameRef.nativeElement.value;
     this.fire.addStudent(this.newStudent);
   }
-  onUpdateStudent($event: string) {
-    this.fire.updateStudent($event);
-  }
 
 
 }

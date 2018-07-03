@@ -1,12 +1,10 @@
-<div class="container">
-  <app-student></app-student>
-  <a (click)="getList()" class="is-warning">Get Students List</a>
+ <a (click)="getList()" class="button is-primary">Get Students List</a>
   <div *ngFor="let student of students | async">
     <div class="container">
-      <div class="box"> ClassName: {{student.className}} StudentName: {{student.studentName}} CustodianName: {{student.studentName}}
-        <a class="button is-warning">Delete</a>
-        <a class="button is-primary">Update</a>
+      <div class="box"> ClassName: StudentName:  CustodianName: {{student.studentName}}
+        <a (click)="onDeleteStudent(student.key)" class="button is-warning">Delete</a>
+        <a (click)="onUpdateStudent(student.key)" class="button is-primary">Update</a>
       </div>
     </div>
   </div>
-</div>
+
