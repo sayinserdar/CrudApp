@@ -1,4 +1,21 @@
-<input class="input" #studentName type="text" placeholder="Name">
-<input class="input" #custodianName type="text" placeholder="Custodian Name">
-<input class="input" #className type="text" placeholder="Class">
+<div class="container">
+  <div class="field">
+    <div class="control">
+      <input class="input is-primary" #studentName placeholder="Student Name">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input is-primary" #custodianName placeholder="Custodian Name">
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+      <input class="input is-primary" #className placeholder="Class Name">
+    </div>
+  </div>
 <a (click)="onAddSelected()" class="button is-primary">Add</a>
+</div>
+
+
+

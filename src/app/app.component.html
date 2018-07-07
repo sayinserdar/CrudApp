@@ -1,31 +1,8 @@
-<nav class="navbar is-danger">
-  <div class="navbar-brand">
-    <div class="navbar-item">
-      CrudApp
-    </div>
-  </div>
-
-  <div  class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item" href="/">
-        Home
-      </a>
-      <a class="navbar-item" routerLink="/add">
-        Add
-      </a>
-      <a class="navbar-item" routerLink="/list">
-        List
-      </a>
-      <a class="navbar-item" routerLink="/update">
-        Update
-      </a>
-    </div>
-
-
-  </div>
-</nav>
-
-<div>
+ <div class="tabs is-centered">
+   <ul>
+     <li><a routerLink="/add" >Add</a></li>
+     <li><a routerLink="/list" >List</a></li>
+   </ul>
+ </div>
     <router-outlet></router-outlet>
-    <!-- <button (click)="deleteAll()" class="button is-warning">Delete All</button>-->
-</div>
+

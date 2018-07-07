@@ -1,0 +1,12 @@
+<div *ngFor="let student of students | async">
+    <div class="container">
+      <div class="content"> Student Name:  Custodian Name: Class Name:
+      </div>
+      <div>
+        <a (click)="onDeleteStudent(student.key)" class="button is-warning">Delete</a>
+        <a routerLink="/update/{{student.key}}" class="button is-info">Update</a>
+      </div>
+      <hr>
+      </div>
+
+</div>

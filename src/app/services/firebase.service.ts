@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
-import {StudentModel} from './list/student/student.model';
-import { map } from 'rxjs/operators';
-import {s} from '@angular/core/src/render3';
+import {StudentModel} from '../students/student/student.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +14,17 @@ export class FirebaseService {
   getList(ref: string) {
     return this.db.list(ref).snapshotChanges();
   }
+
   addStudent(student: StudentModel) {
-    this.itemsRef.push(student);
+    this.itemsRef.push(student).then(() => {
+      return true;
+    });
   }
   deleteStudent(key: string) {
     this.itemsRef.remove(key);
   }
-  updateStudent(key: string) {
+  updateStudent(key: string, data) {
+    this.itemsRef.update(key, data);
   }
   deleteAll() {
     this.itemsRef.remove();

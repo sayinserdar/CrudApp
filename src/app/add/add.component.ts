@@ -1,7 +1,6 @@
 import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
-import {FirebaseService} from '../firebase.service';
-import {StudentModel} from '../list/student/student.model';
-import {AngularFireDatabase} from 'angularfire2/database';
+import {FirebaseService} from '../services/firebase.service';
+import {StudentModel} from '../students/student/student.model';
 
 @Component({
   selector: 'app-add',
