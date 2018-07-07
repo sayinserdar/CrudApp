@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FirebaseService} from '../../firebase.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-student',
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-
-  constructor() { }
+  students: Observable<any[]>;
+  constructor(private fire: FirebaseService) { }
 
   ngOnInit() {
   }
-
 }

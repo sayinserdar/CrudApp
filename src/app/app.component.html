@@ -7,21 +7,25 @@
 
   <div  class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="https://bulma.io/">
-        List
+      <a class="navbar-item" href="/">
+        Home
       </a>
-      <a class="navbar-item" href="https://bulma.io/">
+      <a class="navbar-item" routerLink="/add">
         Add
       </a>
+      <a class="navbar-item" routerLink="/list">
+        List
+      </a>
+      <a class="navbar-item" routerLink="/update">
+        Update
+      </a>
     </div>
+
+
   </div>
 </nav>
-<div>
-  <router-outlet></router-outlet>
-  <app-add></app-add>
-</div>
 
 <div>
-    <button (click)="deleteAll()" class="button is-warning">Delete All</button>
-    <app-list></app-list>
+    <router-outlet></router-outlet>
+    <!-- <button (click)="deleteAll()" class="button is-warning">Delete All</button>-->
 </div>
